@@ -51,6 +51,12 @@ section{
   display:block;
 }
 
+/* LIST STYLE */
+ul{
+  text-align:left;
+  line-height:1.8;
+}
+
 /* BUTTONS */
 .buttons{
   display:grid;
@@ -113,7 +119,6 @@ section{
   border-radius:6px;
   margin-top:10px;
   font-style:italic;
-  text-align:left;
   font-size:15px;
 }
 
@@ -144,95 +149,116 @@ footer{
     </p>
   </div>
 
-  <!-- ARTICLES SLIDESHOW -->
+  <!-- PROGRAMS -->
+  <div class="card">
+    <h3>Our Programs & Activities</h3>
+    <ul>
+      <li>📘 Islamic Education & Da’wah Programs</li>
+      <li>🍲 Ramadan Iftar & Food Distribution</li>
+      <li>🧕 Women & Youth Empowerment</li>
+      <li>🩺 Medical Outreach & Community Health</li>
+      <li>🤝 Support for Orphans & Less Privileged</li>
+    </ul>
+  </div>
+
+  <!-- ARTICLES -->
   <div class="card">
     <h3>Islamic Articles & Announcements</h3>
-
     <div class="slideshow">
       <div class="slide active">
         <strong>Ramadan Reminder 🌙</strong><br>
         “Whoever fasts Ramadan with faith and seeking reward,
         all his past sins will be forgiven.” (Bukhari & Muslim)
       </div>
-
       <div class="slide">
         <strong>Charity in Islam 🤍</strong><br>
         The Prophet ﷺ said: “Charity does not decrease wealth.”
-        Support those in need and earn lasting reward.
       </div>
-
       <div class="slide">
         <strong>Community Announcement 📢</strong><br>
-        PHF Oyo Branch will be organizing a Ramadan Iftar Project.
-        Volunteers and donors are welcome.
+        PHF Oyo Branch Ramadan Iftar Project – Volunteers welcome.
       </div>
-
       <div class="slide">
         <strong>Islamic Teaching 🕌</strong><br>
         Purity of the heart leads to closeness to Allah.
-        Always renew intentions and seek sincerity.
       </div>
     </div>
+  </div>
+
+  <!-- WEEKLY REMINDER -->
+  <div class="card">
+    <h3>Weekly Islamic Reminder</h3>
+    <p>
+      “Indeed, in the remembrance of Allah do hearts find rest.”<br>
+      <strong>(Qur’an 13:28)</strong>
+    </p>
+  </div>
+
+  <!-- EVENTS -->
+  <div class="card">
+    <h3>Upcoming Events</h3>
+    <ul>
+      <li><strong>Ramadan Iftar Project</strong> – March 2026</li>
+      <li><strong>Community Da’wah Lecture</strong> – Oyo</li>
+      <li><strong>Youth Islamic Seminar</strong> – TBA</li>
+    </ul>
+  </div>
+
+  <!-- WHY SUPPORT -->
+  <div class="card">
+    <h3>Why Support PHF?</h3>
+    <p>
+      Your support helps spread authentic Islamic knowledge,
+      relieve hardship, and strengthen our community.
+      Every donation is a form of Sadaqah Jariyah.
+    </p>
+  </div>
+
+  <!-- COMMUNITY VOICE -->
+  <div class="card">
+    <h3>Community Voices</h3>
+    <p style="font-style:italic;">
+      “Pure Heart Islamic Foundation has positively impacted our community
+      through sincere da’wah and charity. May Allah reward them.”
+    </p>
   </div>
 
   <!-- CONNECT -->
   <h3>Connect With Us</h3>
   <div class="buttons">
-
-    <a class="btn facebook" href="https://www.facebook.com/oyostatePHF/" target="_blank">
-      Facebook Page
-    </a>
-
-    <a class="btn whatsapp" href="https://whatsapp.com/channel/0029Vb7KA8KAO7RQKgfSOQ3u" target="_blank">
-      WhatsApp Channel
-    </a>
-
-    <a class="btn gallery" href="https://drive.google.com/drive/folders/13U0SQdSIjOjUy5m2Mjwubg9juGKjLRmh?usp=drive_link" target="_blank">
-      Gallery
-    </a>
-
-    <div class="btn donate" onclick="openDonate()">
-      Donate
-    </div>
-
+    <a class="btn facebook" href="https://www.facebook.com/oyostatePHF/" target="_blank">Facebook</a>
+    <a class="btn whatsapp" href="https://whatsapp.com/channel/0029Vb7KA8KAO7RQKgfSOQ3u" target="_blank">WhatsApp</a>
+    <a class="btn gallery" href="https://drive.google.com/drive/folders/13U0SQdSIjOjUy5m2Mjwubg9juGKjLRmh?usp=drive_link" target="_blank">Gallery</a>
+    <div class="btn donate" onclick="openDonate()">Donate</div>
   </div>
 
 </section>
 
-<!-- DONATION SLIDE -->
+<!-- DONATION -->
 <div id="donateBox">
   <div class="donate-content">
     <div class="close" onclick="closeDonate()">✖</div>
-
     <h3>Support Our Cause</h3>
 
     <p><strong>Account Name:</strong> Pure Heart Islamic Foundation</p>
     <p><strong>Bank:</strong> Access Bank</p>
     <p><strong>Account Number:</strong> 1232593959</p>
-    <p><strong>Contact:</strong> 080XXXXXXXX</p>
 
-    <img src="phf.jpeg" alt="Donation Flyer" width="160">
+    <img src="phf.jpeg" alt="Donation">
 
     <div class="placeholder">
       “The example of those who spend their wealth in the way of Allah
-      is like a seed that grows seven ears; in every ear is a hundred grains.”
-      <br><strong>(Qur’an 2:261)</strong><br><br>
-
-      This Ramadan, support our Iftar Project and help feed fasting souls.
-      Your sadaqah can bring relief, joy, and immense reward.
-      <br><br>
-      Give for the sake of Allah, and may He multiply your reward.
+      is like a seed that grows seven ears…” (Qur’an 2:261)
     </div>
   </div>
 </div>
 
 <footer>
-  © 2026 Pure Heart Islamic Foundation (PHF) – Oyo Local Branch<br>
-  Returning to Allah with a Pure Heart
+  © 2026 Pure Heart Islamic Foundation – Oyo Branch<br>
+  📍 Oyo State • 📞 080XXXXXXXX
 </footer>
 
 <script>
-/* Donation Modal */
 function openDonate(){
   document.getElementById("donateBox").style.display="block";
 }
@@ -240,15 +266,13 @@ function closeDonate(){
   document.getElementById("donateBox").style.display="none";
 }
 
-/* Article Slideshow */
-let slides = document.querySelectorAll(".slide");
-let index = 0;
-
-setInterval(() => {
+let slides=document.querySelectorAll(".slide");
+let index=0;
+setInterval(()=>{
   slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
+  index=(index+1)%slides.length;
   slides[index].classList.add("active");
-}, 5000);
+},5000);
 </script>
 
 </body>
