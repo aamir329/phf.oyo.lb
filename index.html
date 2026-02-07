@@ -37,6 +37,20 @@ section{
   margin-bottom:30px;
 }
 
+/* ARTICLE SLIDESHOW */
+.slideshow{
+  position:relative;
+  min-height:120px;
+}
+.slide{
+  display:none;
+  font-size:16px;
+  line-height:1.6;
+}
+.slide.active{
+  display:block;
+}
+
 /* BUTTONS */
 .buttons{
   display:grid;
@@ -69,8 +83,8 @@ section{
 .donate-content{
   background:#fff;
   color:#000;
-  max-width:500px;
-  margin:8% auto;
+  max-width:520px;
+  margin:6% auto;
   padding:25px;
   border-radius:10px;
   text-align:left;
@@ -85,16 +99,22 @@ section{
   font-weight:bold;
   color:red;
 }
+.donate-content img{
+  display:block;
+  margin:10px auto;
+  border-radius:6px;
+}
 
-/* PLACEHOLDER */
+/* PLACEHOLDER BOX */
 .placeholder{
   background:#f2f2f2;
-  color:#666;
+  color:#444;
   padding:15px;
   border-radius:6px;
   margin-top:10px;
   font-style:italic;
-  text-align:center;
+  text-align:left;
+  font-size:15px;
 }
 
 footer{
@@ -124,16 +144,34 @@ footer{
     </p>
   </div>
 
-  <!-- ARTICLES -->
+  <!-- ARTICLES SLIDESHOW -->
   <div class="card">
     <h3>Islamic Articles & Announcements</h3>
-    <p>
-      This section will contain Islamic teachings, reminders, event updates,
-      and important announcements from the foundation.
-    </p>
 
-    <div class="placeholder">
-      Ramadan Mubarak
+    <div class="slideshow">
+      <div class="slide active">
+        <strong>Ramadan Reminder 🌙</strong><br>
+        “Whoever fasts Ramadan with faith and seeking reward,
+        all his past sins will be forgiven.” (Bukhari & Muslim)
+      </div>
+
+      <div class="slide">
+        <strong>Charity in Islam 🤍</strong><br>
+        The Prophet ﷺ said: “Charity does not decrease wealth.”
+        Support those in need and earn lasting reward.
+      </div>
+
+      <div class="slide">
+        <strong>Community Announcement 📢</strong><br>
+        PHF Oyo Branch will be organizing a Ramadan Iftar Project.
+        Volunteers and donors are welcome.
+      </div>
+
+      <div class="slide">
+        <strong>Islamic Teaching 🕌</strong><br>
+        Purity of the heart leads to closeness to Allah.
+        Always renew intentions and seek sincerity.
+      </div>
     </div>
   </div>
 
@@ -146,7 +184,7 @@ footer{
     </a>
 
     <a class="btn whatsapp" href="https://whatsapp.com/channel/0029Vb7KA8KAO7RQKgfSOQ3u" target="_blank">
-      WhatsApp Contact
+      WhatsApp Channel
     </a>
 
     <a class="btn gallery" href="https://drive.google.com/drive/folders/13U0SQdSIjOjUy5m2Mjwubg9juGKjLRmh?usp=drive_link" target="_blank">
@@ -169,33 +207,21 @@ footer{
     <h3>Support Our Cause</h3>
 
     <p><strong>Account Name:</strong> Pure Heart Islamic Foundation</p>
-    <p><strong>Bank Name:</strong> Access Bank</p>
-    <p><strong>Account Number:</strong>1232593959</p>
-
+    <p><strong>Bank:</strong> Access Bank</p>
+    <p><strong>Account Number:</strong> 1232593959</p>
     <p><strong>Contact:</strong> 080XXXXXXXX</p>
-<img src="phf.jpeg" alt="Description" width="150" height="200">
+
+    <img src="phf.jpeg" alt="Donation Flyer" width="160">
 
     <div class="placeholder">
-      > “The example of those who spend their wealth in the way of Allah is like a seed that grows seven ears; in every ear is a hundred grains.”
-(Qur’an 2:261)
+      “The example of those who spend their wealth in the way of Allah
+      is like a seed that grows seven ears; in every ear is a hundred grains.”
+      <br><strong>(Qur’an 2:261)</strong><br><br>
 
-
-
-This Ramadan, let your charity become light for you and ease for others.
-Join us in feeding fasting souls and spreading mercy by supporting our Ramadan Iftar Project.
-
- Account Name : Pure Heart Islamic Foundation of Nigeria
- Bank : Access Bank
- Account Number : 1232593959
-
-Your financial contribution—small or large—can place food on a table and smiles on hearts.
-
-
-Give for the sake of Allah, and may He multiply your reward beyond measure. 🤍
-
-
- Donate today and be part of this sadaqah that continues.
-      
+      This Ramadan, support our Iftar Project and help feed fasting souls.
+      Your sadaqah can bring relief, joy, and immense reward.
+      <br><br>
+      Give for the sake of Allah, and may He multiply your reward.
     </div>
   </div>
 </div>
@@ -206,14 +232,24 @@ Give for the sake of Allah, and may He multiply your reward beyond measure. 🤍
 </footer>
 
 <script>
+/* Donation Modal */
 function openDonate(){
   document.getElementById("donateBox").style.display="block";
 }
 function closeDonate(){
   document.getElementById("donateBox").style.display="none";
 }
+
+/* Article Slideshow */
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 5000);
 </script>
 
 </body>
 </html>
-
