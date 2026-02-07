@@ -15,12 +15,21 @@ body{
 }
 
 /* HEADER */
-header{padding:30px 15px;}
-header img{width:140px;}
+header{
+  padding:30px 15px;
+}
+header img{
+  width:140px;
+}
 h1{margin:10px 0 5px;}
 h2{font-weight:normal;font-size:18px;color:#ddd;}
 
-section{padding:25px 15px;max-width:900px;margin:auto;}
+/* SECTIONS */
+section{
+  padding:25px 15px;
+  max-width:900px;
+  margin:auto;
+}
 .card{
   background:rgba(255,255,255,0.08);
   border-radius:10px;
@@ -28,74 +37,107 @@ section{padding:25px 15px;max-width:900px;margin:auto;}
   margin-bottom:30px;
 }
 
-/* SLIDES */
-.slideshow{min-height:120px;}
-.slide{display:none;line-height:1.6;}
-.slide.active{display:block;}
+/* ARTICLE SLIDESHOW */
+.slideshow{
+  position:relative;
+  min-height:120px;
+}
+.slide{
+  display:none;
+  font-size:16px;
+  line-height:1.6;
+}
+.slide.active{
+  display:block;
+}
 
-ul{text-align:left;line-height:1.8;}
+/* LIST STYLE */
+ul{
+  text-align:left;
+  line-height:1.8;
+}
 
 /* BUTTONS */
 .buttons{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
   gap:15px;
 }
 .btn{
   padding:15px;
   border-radius:8px;
+  text-decoration:none;
   color:#fff;
   font-weight:bold;
+  transition:.2s;
   cursor:pointer;
 }
+.btn:hover{opacity:.9;transform:scale(1.03);}
 .facebook{background:#1877f2;}
 .whatsapp{background:#25d366;}
 .gallery{background:#db4437;}
 .donate{background:#c0392b;}
 
-/* DONATION */
+/* DONATION MODAL */
 #donateBox{
-  display:none;position:fixed;inset:0;
-  background:rgba(0,0,0,.7);z-index:999;
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  z-index:999;
 }
 .donate-content{
-  background:#fff;color:#000;
-  max-width:520px;margin:6% auto;
-  padding:25px;border-radius:10px;text-align:left;
+  background:#fff;
+  color:#000;
+  max-width:520px;
+  margin:6% auto;
+  padding:25px;
+  border-radius:10px;
+  text-align:left;
 }
-.close{color:red;cursor:pointer;text-align:right;}
+.donate-content h3{
+  text-align:center;
+  margin-top:0;
+}
+.close{
+  text-align:right;
+  cursor:pointer;
+  font-weight:bold;
+  color:red;
+}
+
+/* ✅ FIXED RAMADAN IMAGE SIZE */
 .donate-content img{
-  width:180px;max-width:100%;
-  display:block;margin:10px auto;
+  display:block;
+  margin:12px auto;
+  max-width:100%;
+  width:180px;
+  height:auto;
   border-radius:8px;
 }
 
-/* AI CHAT */
-#aiBtn{
-  position:fixed;bottom:20px;right:20px;
-  background:#0b6d3a;color:#fff;
-  padding:14px 18px;border-radius:30px;
-  cursor:pointer;font-weight:bold;
-  z-index:999;
-}
-#aiChat{
-  display:none;
-  position:fixed;bottom:80px;right:20px;
-  width:300px;background:#fff;color:#000;
-  border-radius:10px;padding:15px;
-}
-#aiChat input{
-  width:100%;padding:8px;margin-top:8px;
-}
-#aiMessages{
-  max-height:200px;overflow-y:auto;
-  font-size:14px;
+/* Smaller on mobile */
+@media (max-width:480px){
+  .donate-content img{
+    width:150px;
+  }
 }
 
-/* FOOTER */
+/* PLACEHOLDER BOX */
+.placeholder{
+  background:#f2f2f2;
+  color:#444;
+  padding:15px;
+  border-radius:6px;
+  margin-top:10px;
+  font-style:italic;
+  font-size:15px;
+}
+
 footer{
-  background:rgba(0,0,0,.3);
-  padding:15px;font-size:14px;
+  background:rgba(0,0,0,0.3);
+  padding:15px;
+  font-size:14px;
 }
 </style>
 </head>
@@ -103,107 +145,137 @@ footer{
 <body>
 
 <header>
-  <img src="phf-logo.png">
+  <img src="phf-logo.png" alt="PHF Logo">
   <h1>Pure Heart Islamic Foundation</h1>
   <h2>Oyo Local Branch • Nigeria</h2>
 </header>
 
 <section>
 
-<div class="card">
-<h3>About Us</h3>
-<p>PHF is dedicated to Islamic education, charity, and community upliftment.</p>
-</div>
+  <div class="card">
+    <h3>About Us</h3>
+    <p>
+      Pure Heart Islamic Foundation (PHF) is dedicated to spiritual development,
+      humanitarian services, education, and community upliftment, guided by Islamic values.
+    </p>
+  </div>
 
-<div class="card">
-<h3>Islamic Articles & Announcements</h3>
-<div class="slideshow">
-<div class="slide active">Ramadan Reminder 🌙</div>
-<div class="slide">Charity does not decrease wealth 🤍</div>
-<div class="slide">Join our Ramadan Iftar Project</div>
-</div>
-</div>
+  <div class="card">
+    <h3>Our Programs & Activities</h3>
+    <ul>
+      <li>📘 Islamic Education & Da’wah Programs</li>
+      <li>🍲 Ramadan Iftar & Food Distribution</li>
+      <li>🧕 Women & Youth Empowerment</li>
+      <li>🩺 Medical Outreach & Community Health</li>
+      <li>🤝 Support for Orphans & Less Privileged</li>
+    </ul>
+  </div>
 
-<div class="card">
-<h3>Weekly Islamic Reminder</h3>
-<p id="weeklyReminder"></p>
-</div>
+  <div class="card">
+    <h3>Islamic Articles & Announcements</h3>
+    <div class="slideshow">
+      <div class="slide active">
+        <strong>Ramadan Reminder 🌙</strong><br>
+        “Whoever fasts Ramadan with faith and seeking reward,
+        all his past sins will be forgiven.” (Bukhari & Muslim)
+      </div>
+      <div class="slide">
+        <strong>Charity in Islam 🤍</strong><br>
+        The Prophet ﷺ said: “Charity does not decrease wealth.”
+      </div>
+      <div class="slide">
+        <strong>Community Announcement 📢</strong><br>
+        PHF Oyo Branch Ramadan Iftar Project – Volunteers welcome.
+      </div>
+      <div class="slide">
+        <strong>Islamic Teaching 🕌</strong><br>
+        Purity of the heart leads to closeness to Allah.
+      </div>
+    </div>
+  </div>
 
-<h3>Connect With Us</h3>
-<div class="buttons">
-<div class="btn facebook">Facebook</div>
-<div class="btn whatsapp">WhatsApp</div>
-<div class="btn gallery">Gallery</div>
-<div class="btn donate" onclick="openDonate()">Donate</div>
-</div>
+  <div class="card">
+    <h3>Weekly Islamic Reminder</h3>
+    <p>
+      “Indeed, in the remembrance of Allah do hearts find rest.”<br>
+      <strong>(Qur’an 13:28)</strong>
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Upcoming Events</h3>
+    <ul>
+      <li><strong>Ramadan Iftar Project</strong> – March 2026</li>
+      <li><strong>Community Da’wah Lecture</strong> – Oyo</li>
+      <li><strong>Youth Islamic Seminar</strong> – TBA</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Why Support PHF?</h3>
+    <p>
+      Your support helps spread authentic Islamic knowledge,
+      relieve hardship, and strengthen our community.
+      Every donation is a form of Sadaqah Jariyah.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Community Voices</h3>
+    <p style="font-style:italic;">
+      “Pure Heart Islamic Foundation has positively impacted our community
+      through sincere da’wah and charity. May Allah reward them.”
+    </p>
+  </div>
+
+  <h3>Connect With Us</h3>
+  <div class="buttons">
+    <a class="btn facebook" href="https://www.facebook.com/oyostatePHF/" target="_blank">Facebook</a>
+    <a class="btn whatsapp" href="https://whatsapp.com/channel/0029Vb7KA8KAO7RQKgfSOQ3u" target="_blank">WhatsApp</a>
+    <a class="btn gallery" href="https://drive.google.com/drive/folders/13U0SQdSIjOjUy5m2Mjwubg9juGKjLRmh?usp=drive_link" target="_blank">Gallery</a>
+    <div class="btn donate" onclick="openDonate()">Donate</div>
+  </div>
 
 </section>
 
-<!-- DONATE -->
 <div id="donateBox">
-<div class="donate-content">
-<div class="close" onclick="closeDonate()">✖</div>
-<h3>Support Our Cause</h3>
-<p><strong>Account:</strong> 1232593959 (Access Bank)</p>
-<img src="phf.jpeg">
-</div>
-</div>
+  <div class="donate-content">
+    <div class="close" onclick="closeDonate()">✖</div>
+    <h3>Support Our Cause</h3>
 
-<!-- AI CHAT -->
-<div id="aiBtn" onclick="toggleAI()">Ask PHF AI 🤖</div>
-<div id="aiChat">
-<div id="aiMessages">
-<p><strong>PHF AI:</strong> Assalamu Alaikum! Ask me about Islam or PHF.</p>
-</div>
-<input id="aiInput" placeholder="Type your question..." onkeydown="if(event.key==='Enter')askAI()">
+    <p><strong>Account Name:</strong> Pure Heart Islamic Foundation</p>
+    <p><strong>Bank:</strong> Access Bank</p>
+    <p><strong>Account Number:</strong> 1232593959</p>
+
+    <img src="phf.jpeg" alt="Ramadan Donation Flyer">
+
+    <div class="placeholder">
+      “The example of those who spend their wealth in the way of Allah
+      is like a seed that grows seven ears…” (Qur’an 2:261)
+    </div>
+  </div>
 </div>
 
 <footer>
-© 2026 Pure Heart Islamic Foundation – Oyo Branch
+  © 2026 Pure Heart Islamic Foundation – Oyo Branch<br>
+  📍 Oyo State • 📞 080XXXXXXXX
 </footer>
 
 <script>
-// Slideshow
-let slides=document.querySelectorAll(".slide"),i=0;
+function openDonate(){
+  document.getElementById("donateBox").style.display="block";
+}
+function closeDonate(){
+  document.getElementById("donateBox").style.display="none";
+}
+
+let slides=document.querySelectorAll(".slide");
+let index=0;
 setInterval(()=>{
-slides[i].classList.remove("active");
-i=(i+1)%slides.length;
-slides[i].classList.add("active");
+  slides[index].classList.remove("active");
+  index=(index+1)%slides.length;
+  slides[index].classList.add("active");
 },5000);
-
-// Weekly AI Reminder
-let reminders=[
-"Indeed, with hardship comes ease (Qur’an 94:6)",
-"The best among you are those who learn and teach Qur’an",
-"Give charity, for it extinguishes sins",
-"Allah loves those who are patient"
-];
-let r=0;
-setInterval(()=>{
-document.getElementById("weeklyReminder").innerText=reminders[r];
-r=(r+1)%reminders.length;
-},10000);
-
-// Donation
-function openDonate(){donateBox.style.display="block";}
-function closeDonate(){donateBox.style.display="none";}
-
-// AI CHAT
-function toggleAI(){
-aiChat.style.display=aiChat.style.display==="block"?"none":"block";
-}
-function askAI(){
-let q=aiInput.value.toLowerCase();
-let reply="Please contact PHF for detailed guidance.";
-if(q.includes("fast")) reply="Eating, drinking, and intimacy break the fast.";
-if(q.includes("zakat")) reply="Zakat is 2.5% of qualifying savings.";
-if(q.includes("ramadan")) reply="Ramadan is a month of fasting, Qur’an, and charity.";
-
-aiMessages.innerHTML+=`<p><strong>You:</strong> ${aiInput.value}</p>`;
-aiMessages.innerHTML+=`<p><strong>PHF AI:</strong> ${reply}</p>`;
-aiInput.value="";
-aiMessages.scrollTop=aiMessages.scrollHeight;
-}
 </script>
 
 </body>
