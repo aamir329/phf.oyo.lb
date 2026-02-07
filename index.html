@@ -276,7 +276,21 @@ setInterval(()=>{
   index=(index+1)%slides.length;
   slides[index].classList.add("active");
 },5000);
+  // Weekly AI Reminder
+let reminders=[
+"Indeed, with hardship comes ease (Qur’an 94:6)",
+"The best among you are those who learn and teach Qur’an",
+"Give charity, for it extinguishes sins",
+"Allah loves those who are patient"
+];
+let r=0;
+setInterval(()=>{
+document.getElementById("weeklyReminder").innerText=reminders[r];
+r=(r+1)%reminders.length;
+},10000);
+
 </script>
 
 </body>
 </html>
+
